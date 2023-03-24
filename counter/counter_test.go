@@ -5,7 +5,6 @@ import (
 )
 
 func TestCounter(t *testing.T) {
-
 	ctr := New()
 
 	numAdds := 3

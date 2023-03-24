@@ -15,7 +15,6 @@ const (
 )
 
 func New() *WaitGroup {
-
 	var n int
 	var wg WaitGroup = WaitGroup{
 		ops: make(chan op),
@@ -42,7 +41,6 @@ func (wg *WaitGroup) Done() {
 }
 
 func (wg *WaitGroup) Wait() {
-
 	for {
 		res := make(chan int)
 		wg.ops <- op{opCheck, res, 0}

@@ -6,7 +6,6 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	wg.Add(1)
@@ -20,7 +19,6 @@ func TestAdd(t *testing.T) {
 }
 
 func TestChain(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	wg.Add(1)
@@ -31,7 +29,6 @@ func TestChain(t *testing.T) {
 	}()
 
 	wg.Wait()
-
 	wg.Add(1)
 
 	go func() {
@@ -43,7 +40,6 @@ func TestChain(t *testing.T) {
 }
 
 func TestChainAlt(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	wg.Add(1)
@@ -54,7 +50,6 @@ func TestChainAlt(t *testing.T) {
 	}()
 
 	wg.Wait()
-
 	wg.Add(1)
 
 	go func() {
@@ -66,7 +61,6 @@ func TestChainAlt(t *testing.T) {
 }
 
 func TestChainAltAlt(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	wg.Add(1)
@@ -80,7 +74,6 @@ func TestChainAltAlt(t *testing.T) {
 }
 
 func TestChainLoop(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	for i := 0; i <= 1000; i++ {
@@ -90,7 +83,6 @@ func TestChainLoop(t *testing.T) {
 }
 
 func TestAddMulti(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	wg.Add(2)
@@ -109,14 +101,12 @@ func TestAddMulti(t *testing.T) {
 }
 
 func TestEmptyChannelUnblocksOnWait(t *testing.T) {
-
 	var wg *WaitGroup = New()
 
 	wg.Wait()
 }
 
 func BenchmarkWaitgroup(b *testing.B) {
-
 	var wg *WaitGroup = New()
 
 	for i := 0; i < b.N; i++ {
